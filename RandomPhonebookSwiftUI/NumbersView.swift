@@ -8,8 +8,19 @@
 import SwiftUI
 
 struct NumbersView: View {
+    
+    let contacts = Person.getContactList()
+    
     var body: some View {
-        Text("Hello, World! Numbers!")
+        List(contacts) { contact in
+            Section("\(contact.fullName)") {
+                Text("\(Image(systemName: "candybarphone")) \(contact.phoneNumber)")
+                Text("\(Image(systemName: "mail")) \(contact.email)")
+ 
+            }
+//            Text("\(contact.fullName)")
+        }
+        .navigationTitle("Contact List")
     }
 }
 
