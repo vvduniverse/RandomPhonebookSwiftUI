@@ -7,16 +7,30 @@
 
 import Foundation
 
-struct Person {
+//class Persons: ObservableObject {
+//    @Published var contacts = Person.getContactList()
+//}
+
+struct Person: Identifiable {
     
+//    let id: Int
     let name: String
     let surname: String
     let email: String
     let phoneNumber: String
+    let id = UUID()
+    
     
     var fullName: String {
         "\(name) \(surname)"
     }
+    
+//    init(name: String, surname: String, email: String, phoneNumber: String) {
+//        self.name = name
+//        self.surname = surname
+//        self.email = email
+//        self.phoneNumber = phoneNumber
+//    }
 }
 
 extension Person {
